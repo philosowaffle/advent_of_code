@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode;
+﻿using FluentAssertions;
+
+namespace AdventOfCode;
 public class Day03_RucksackReorganization
 {
 	private static readonly Dictionary<char, byte> ItemPriority = new Dictionary<char, byte>() { };
@@ -41,6 +43,7 @@ public class Day03_RucksackReorganization
 		}
 
 		TestContext.Out.WriteLine($"Answer: {priorityTotal}");
+		priorityTotal.Should().Be(7811);
 	}
 
 	[Test]
@@ -68,5 +71,6 @@ public class Day03_RucksackReorganization
 		}
 
 		TestContext.Out.WriteLine($"Answer: {priorityTotal}");
+		priorityTotal.Should().Be(2639);
 	}
 }
