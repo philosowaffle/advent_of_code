@@ -14,6 +14,16 @@ internal static class Helpers
 		}
 	}
 
+	public static string ReadTextFromFile(byte day, byte puzzleNumber)
+	{
+		var path = Path.Join(DataDirectory, $"day{day}_puzzle{puzzleNumber}.txt");
+		using (var reader = new StreamReader(path))
+		{
+			var content = reader.ReadToEnd();
+			return content;
+		}
+	}
+
 	public static string[] GetCleanedLines(this string input)
 	{
 		return input.Replace("\r", String.Empty)
