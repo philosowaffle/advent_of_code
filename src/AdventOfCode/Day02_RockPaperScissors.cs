@@ -95,7 +95,7 @@ public class Day02_RockPaperScissors
 	{
 		var myScore = 0;
 
-		var text = await Helpers.ReadTextFromFileAsync(day: 2, puzzleNumber: 2);
+		var text = await Helpers.ReadTextFromFileAsync(day: 2);
 		var lines = Helpers.GetCleanedLines(text);
 		var moves = Helpers.BuildListOfTuples(lines, ConvertToShape, ConvertToOutcome);
 

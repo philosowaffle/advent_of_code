@@ -32,8 +32,10 @@ public static class Helpers
 
 	public static string[] GetCleanedLines(this string input)
 	{
-		return input.Replace("\r", String.Empty)
-					 .Split("\n", StringSplitOptions.TrimEntries);
+		return input
+				.Trim()
+				.Replace("\r", String.Empty)
+				.Split("\n", StringSplitOptions.TrimEntries);
 	}
 
 	public static ICollection<(T1, T2)> BuildListOfTuples<T1, T2>(string[] lines, Func<string, T1> mapperFuncT1, Func<string, T2> mapperFuncT2, char splitChar = ' ')
