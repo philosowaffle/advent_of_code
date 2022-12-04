@@ -10,7 +10,7 @@ public static class Helpers
 		Console.Out.WriteLine("INIT: " + DataDirectory);
 	}
 
-	public static async Task<string> ReadTextFromFileAsync(byte day, byte puzzleNumber)
+	public static async Task<string> ReadTextFromFileAsync(byte day, byte puzzleNumber = 1)
 	{
 		var path = Path.Join(DataDirectory, $"day{day}_puzzle{puzzleNumber}.txt");
 		using (var reader = new StreamReader(path))
@@ -20,7 +20,7 @@ public static class Helpers
 		}
 	}
 
-	public static string ReadTextFromFile(byte day, byte puzzleNumber)
+	public static string ReadTextFromFile(byte day, byte puzzleNumber = 1)
 	{
 		var path = Path.Join(DataDirectory, $"day{day}_puzzle{puzzleNumber}.txt");
 		using (var reader = new StreamReader(path))
